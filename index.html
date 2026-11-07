@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mausam AI</title>
+<meta name="description" content="AI weather forecasts for India from NVIDIA FourCastNet, updated twice a day: bulletin, maps, city forecasts, run comparison and forecast-vs-actual rainfall.">
+<meta property="og:title" content="Mausam AI — AI weather forecasts for India">
+<meta property="og:description" content="Latest forecast bulletin, maps and city forecasts, updated twice a day.">
+<meta property="og:image" content="share.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <img src="assets/icon.svg" alt="" width="28" height="28">
+    <div><div class="name" data-t="site">Mausam AI</div><div class="tag" data-t="tagline"></div></div>
+  </div>
+  <div class="controls">
+    <label class="ctl"><span data-t="run">Model run</span>
+      <select id="run-select"></select></label>
+    <label class="ctl"><span data-t="corrected"></span>
+      <select id="kind-select"><option value="corrected" data-t="corrected"></option><option value="raw" data-t="raw"></option></select></label>
+    <div class="kind-help"><button type="button" id="kind-info" class="info" aria-expanded="false" aria-controls="kind-note" data-t-aria="kind_q">?</button>
+      <div id="kind-note" class="kind-note" hidden></div></div>
+    <div class="lang" role="group" aria-label="Language">
+      <button data-lang="en">EN</button><button data-lang="hi">हिं</button><button data-lang="mr">मरा</button>
+    </div>
+  </div>
+  <nav id="nav"></nav>
+</header>
+<main id="main"><p class="muted" data-t="loading">Loading…</p></main>
+<footer class="foot">
+  <span>NVIDIA Earth2Studio · FourCastNet + PrecipitationAFNO · NOAA GFS · NASA GPM IMERG</span>
+  <span id="site-stats"></span>
+  <span id="build-time"></span>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="assets/i18n.js"></script>
+<script src="assets/maps.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
